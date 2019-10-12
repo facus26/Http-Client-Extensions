@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Text;
 
-namespace Framework.ClienteHttp
+namespace ClienteHttp
 {
     public class JsonContent : StringContent
     {

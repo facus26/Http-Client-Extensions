@@ -3,10 +3,10 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
-using Framework.ClienteHttp.Abstractions;
-using Framework.ClienteHttp.Exceptions;
+using ClienteHttp.Abstractions;
+using ClienteHttp.Exceptions;
 
-namespace Framework.ClienteHttp
+namespace ClienteHttp
 {
     public class HttpRestClient : IHttpRestClient
     {
@@ -133,7 +133,7 @@ namespace Framework.ClienteHttp
                                                                   string method, TRequest request)
         {
             var httpResponseMessage = await methodAsync(method, new JsonContent(request)).ConfigureAwait(false);
-            
+
             Validate(httpResponseMessage, method);
         }
 

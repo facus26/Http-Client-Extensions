@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net.Http;
-using Framework.ClienteHttp.Abstractions;
+using ClienteHttp.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Framework.ClienteHttp.NetCore.Factory
+namespace ClienteHttp.Factory
 {
     public class HttpRestClientFactory : IHttpRestClientFactory
     {

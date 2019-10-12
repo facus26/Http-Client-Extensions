@@ -1,9 +1,9 @@
-﻿using Framework.ClienteHttp.Abstractions;
+﻿using ClienteHttp.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace Framework.ClienteHttp.NetClassic.Factory
+namespace ClienteHttp.Factory
 {
     public class HttpRestClientFactory : IHttpRestClientFactory
     {
@@ -11,7 +11,7 @@ namespace Framework.ClienteHttp.NetClassic.Factory
         public HttpRestClientFactory()
         {
             _httpClients = new Dictionary<string, HttpClient>();
-        }        
+        }
 
         public HttpClient CreateClient(string name, Action<HttpClient> configureHttpClient = null)
         {
@@ -25,6 +25,6 @@ namespace Framework.ClienteHttp.NetClassic.Factory
             }
 
             return httpClient;
-        }        
+        }
     }
 }

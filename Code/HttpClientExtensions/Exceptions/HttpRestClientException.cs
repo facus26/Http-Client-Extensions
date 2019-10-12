@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Http;
 
-namespace Framework.ClienteHttp.Exceptions
+namespace ClienteHttp.Exceptions
 {
     public class HttpRestClientException : Exception
     {
@@ -10,8 +10,8 @@ namespace Framework.ClienteHttp.Exceptions
         public HttpStatusCode StatusCode => HttpResponseMessage.StatusCode;
         public HttpResponseMessage HttpResponseMessage { get; }
 
-        public HttpRestClientException (HttpResponseMessage httpResponseMessage) : 
-            base ($"Error invoking URL: {httpResponseMessage.RequestMessage.RequestUri.AbsoluteUri}. {httpResponseMessage.ReasonPhrase}")
+        public HttpRestClientException(HttpResponseMessage httpResponseMessage) :
+            base($"Error invoking URL: {httpResponseMessage.RequestMessage.RequestUri.AbsoluteUri}. {httpResponseMessage.ReasonPhrase}")
         {
             HttpResponseMessage = httpResponseMessage;
         }

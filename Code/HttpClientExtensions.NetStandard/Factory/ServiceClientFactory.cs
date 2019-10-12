@@ -1,9 +1,9 @@
-﻿using Framework.ClienteHttp.NetCore.Abstractions;
+﻿using ClienteHttp.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading;
 
-namespace Framework.ClienteHttp.NetCore.Factory
+namespace ClienteHttp.Factory
 {
     public class ServiceClientFactory<TClient> : IServiceClientFactory<TClient>
     {
