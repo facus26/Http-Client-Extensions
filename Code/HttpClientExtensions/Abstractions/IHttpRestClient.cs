@@ -11,7 +11,6 @@ namespace ClienteHttp.Abstractions
         Uri BaseAddress { get; set; }
         long MaxResponseContentBufferSize { get; set; }
         TimeSpan Timeout { get; set; }
-
         TResponse Get<TResponse>(string method);
         Task<TResponse> GetAsync<TResponse>(string method);
         void Post<TRequest>(string method, TRequest request);

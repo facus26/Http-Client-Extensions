@@ -22,7 +22,9 @@ namespace ClienteHttp.Factory
 
         public HttpClient CreateClient(string name, Action<HttpClient> configureHttpClient = null)
         {
-            throw new NotImplementedException();
+            var httpClient = CreateClient(name);
+            configureHttpClient?.Invoke(httpClient);
+            return httpClient;
         }
     }
 }

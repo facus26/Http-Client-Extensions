@@ -5,6 +5,7 @@ namespace ClienteHttp.Abstractions
 {
     public interface IHttpRestClientFactory
     {
+        HttpClient CreateClient(string name);
         HttpClient CreateClient(string name, Action<HttpClient> configureHttpClient = null);
     }
 }

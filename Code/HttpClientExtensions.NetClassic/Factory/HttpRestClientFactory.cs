@@ -13,17 +13,22 @@ namespace ClienteHttp.Factory
             _httpClients = new Dictionary<string, HttpClient>();
         }
 
-        public HttpClient CreateClient(string name, Action<HttpClient> configureHttpClient = null)
+        public HttpClient CreateClient(string name)
         {
             if (!_httpClients.TryGetValue(name, out HttpClient httpClient))
             {
                 httpClient = new HttpClient();
 
-                configureHttpClient?.Invoke(httpClient);
-
                 _httpClients.Add(name, httpClient);
             }
 
+            return httpClient;
+        }
+
+        public HttpClient CreateClient(string name, Action<HttpClient> configureHttpClient = null)
+        {
+            var httpClient = CreateClient(name);
+            configureHttpClient?.Invoke(httpClient);
             return httpClient;
         }
     }

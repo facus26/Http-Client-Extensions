@@ -130,7 +130,7 @@ namespace ClienteHttp
         #region Método(s) Privado(s)        
 
         private async Task SendAsync<TRequest>(Func<string, JsonContent, Task<HttpResponseMessage>> methodAsync,
-                                                                  string method, TRequest request)
+            string method, TRequest request)
         {
             var httpResponseMessage = await methodAsync(method, new JsonContent(request)).ConfigureAwait(false);
 
@@ -138,7 +138,7 @@ namespace ClienteHttp
         }
 
         private async Task<TResponse> SendAsync<TResponse, TRequest>(Func<string, JsonContent, Task<HttpResponseMessage>> methodAsync,
-                                                                                          string path, TRequest request)
+            string path, TRequest request)
         {
             var response = await methodAsync(path, new JsonContent(request)).ConfigureAwait(false);
 

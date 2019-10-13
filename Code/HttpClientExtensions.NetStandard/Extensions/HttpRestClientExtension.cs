@@ -54,7 +54,9 @@ namespace ClienteHttp.Extensions
                 return serviceClientFactory.CreateClient(httpClient);
             });
 
-            return configureClient != null ? services.AddHttpClient(name, configureClient) : services.AddHttpClient(name);
+            return configureClient != null
+                ? services.AddHttpClient(name, configureClient)
+                : services.AddHttpClient(name);
         }
     }
 }

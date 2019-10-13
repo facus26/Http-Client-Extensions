@@ -32,5 +32,4 @@ namespace ClienteHttp.Extensions
                 .InSingletonScope();
         }
     }
-
 }
